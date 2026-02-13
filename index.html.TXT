@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Muna ❤️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Aura Gradient Background */
+        .aura-bg {
+            background: 
+                radial-gradient(at 0% 0%, hsla(353,96%,80%,1) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, hsla(323,94%,85%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, hsla(353,96%,80%,1) 0, transparent 50%);
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -1;
+            filter: blur(80px);
+            animation: gradient-shift 10s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+            0% { opacity: 0.6; }
+            50% { opacity: 0.8; }
+            100% { opacity: 0.6; }
+        }
+
+        /* Glassmorphism Card */
+        .glass {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        /* Floating Heart Animation */
+        .floating-heart {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        /* Hide scrollbar for carousel */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased selection:bg-pink-200 selection:text-pink-900">
+
+    <div class="aura-bg"></div>
+
+    <main class="max-w-md mx-auto min-h-screen flex flex-col justify-center px-6 py-12 relative">
+        
+        <div class="text-center mb-16 space-y-4">
+            <div class="text-6xl floating-heart mb-4">💌</div>
+            <h1 class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-rose-600">
+                Hey Muna
+            </h1>
+            <p class="text-lg text-gray-600 font-light" id="typing-text"></p>
+        </div>
+
+        <div class="mb-12">
+            <h2 class="text-xs uppercase tracking-widest text-gray-500 mb-4 font-bold text-center">Our Best Moments</h2>
+            
+            <div class="flex overflow-x-auto gap-4 no-scrollbar pb-4 snap-x px-2">
+                
+                <div class="snap-center shrink-0 w-60 h-80 rounded-2xl glass overflow-hidden shadow-lg transform transition hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Memory 1">
+                </div>
+                
+                <div class="snap-center shrink-0 w-60 h-80 rounded-2xl glass overflow-hidden shadow-lg transform transition hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Memory 2">
+                </div>
+                
+                <div class="snap-center shrink-0 w-60 h-80 rounded-2xl glass overflow-hidden shadow-lg transform transition hover:scale-105">
+                    <img src="https://images.unsplash.com/photo-1522673607200-1645062cd958?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Memory 3">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mb-16">
+            <h2 class="text-xs uppercase tracking-widest text-gray-500 mb-4 font-bold text-center">Why You?</h2>
+            <div class="grid grid-cols-2 gap-3">
+                <div class="glass p-5 rounded-2xl col-span-2 shadow-sm text-center">
+                    <span class="text-2xl block mb-2">✨</span>
+                    <p class="font-medium text-gray-700">You make everything better.</p>
+                </div>
+                <div class="glass p-5 rounded-2xl shadow-sm flex flex-col items-center justify-center text-center bg-white/30">
+                    <span class="text-2xl block mb-2">😂</span>
+                    <p class="font-medium text-gray-700">Your laugh</p>
+                </div>
+                <div class="glass p-5 rounded-2xl shadow-sm flex flex-col items-center justify-center text-center bg-pink-50/50">
+                    <span class="text-2xl block mb-2">💖</span>
+                    <p class="font-medium text-gray-700">Your heart</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center relative z-10 pb-20">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 leading-tight">Will you be my<br><span class="text-pink-600">Valentine?</span> 🌹</h2>
+            
+            <div class="flex flex-col items-center gap-4 h-32 relative">
+                <button onclick="acceptProposal()" class="z-20 w-64 bg-gray-900 text-white font-bold py-4 rounded-xl shadow-xl hover:scale-105 transition-transform duration-200 hover:bg-black">
+                    Yes, absolutely! 💖
+                </button>
+                
+                <button id="noBtn" class="text-gray-400 font-medium py-2 px-6 rounded-full transition-all text-sm absolute bottom-0">
+                    No thanks
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <div id="successModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm hidden opacity-0 transition-opacity duration-500">
+        <div class="bg-white p-8 rounded-3xl shadow-2xl max-w-xs text-center transform scale-90 transition-transform duration-300" id="modalContent">
+            <div class="text-6xl mb-4">🥰</div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">Yay!</h3>
+            <p class="text-gray-600">It's a date, Muna! 🥂</p>
+        </div>
+    </div>
+
+    <script>
+        // 1. TYPING EFFECT
+        const text = "I have a question for you...";
+        const typingElement = document.getElementById('typing-text');
+        let i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                typingElement.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 80);
+            }
+        }
+        
+        // Start typing after a short delay
+        setTimeout(typeWriter, 1000);
+
+        // 2. THE RUNAWAY "NO" BUTTON
+        const noBtn = document.getElementById('noBtn');
+        const moveButton = () => {
+            // Get screen dimensions
+            const maxWidth = window.innerWidth - noBtn.offsetWidth;
+            const maxHeight = window.innerHeight - noBtn.offsetHeight;
+            
+            // Random position
+            const randomX = Math.floor(Math.random() * maxWidth);
+            const randomY = Math.floor(Math.random() * maxHeight);
+            
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+            
+            // Add a funny text change sometimes
+            const phrases = ["Are you sure?", "Think again!", "Really?", "Try again!"];
+            noBtn.innerText = phrases[Math.floor(Math.random() * phrases.length)];
+        };
+
+        noBtn.addEventListener('mouseover', moveButton);
+        noBtn.addEventListener('touchstart', moveButton); // For mobile phones
+
+        // 3. THE "YES" ACTION
+        function acceptProposal() {
+            // Trigger Confetti
+            const duration = 3000;
+            const animationEnd = Date.now() + duration;
+            const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+            const randomInRange = (min, max) => Math.random() * (max - min) + min;
+
+            const interval = setInterval(function() {
+                const timeLeft = animationEnd - Date.now();
+
+                if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                }
+
+                const particleCount = 50 * (timeLeft / duration);
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+            }, 250);
+
+            // Show Success Modal
+            const modal = document.getElementById('successModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-90');
+                modalContent.classList.add('scale-100');
+            }, 100);
+        }
+    </script>
+</body>
+</html>
